@@ -41,12 +41,15 @@ filetype plugin on "for markdown
 set textwidth=140
 
 "Set language and turn on spellchecking
-setlocal spell spelllang=en_us
+nnoremap <F2> :set spell spelllang=en_us<cr>
+nnoremap <F3> :set spell spelllang=pl<cr>
+nnoremap <F4> :set nospell<cr>
+"setlocal spell spelllang=en_us
 
 "Turn on syntax highlights
 syntax on
 
-"Turn on line numbers, relative numbers and line highlight
+"Turn on line numbers relative numbers and line highlight
 set number
 set relativenumber
 set cursorline
