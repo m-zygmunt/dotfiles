@@ -77,5 +77,9 @@ if has('gui_running')
   map! <S-Insert> <MiddleMouse>
 endif
 
+"Some NERD Tree specific settings
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 "Allow saving of files as sudo when I forgot to start as sudp
 cmap w!! w !sudo tee > /dev/null %
