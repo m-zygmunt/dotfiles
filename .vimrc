@@ -7,35 +7,34 @@ let mapleader =","
 
 
 """""""""""""""""""""""""""""""""""""""
-"Vundle definition begin
+"Plug definition begin
 set nocompatible	"Use Vim defaults instead of 100% vi compatibility
-filetype off		"Required by Vundle
 
-"Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+		  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	endif
 
-"Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 "Utility
-Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'junegunn/goyo'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/goyo.vim'
 
-"All of Plugins must be added before following line
-call vundle#end()		"required
-filetype plugin indent on	"required
-filetype plugin on "for markdown
+call plug#end()
 
-"Vundle definition end
+"Plug definition end
 """""""""""""""""""""""""""""""""""""""
 
+filetype plugin indent on	"required
+filetype plugin on "for markdown
 
 "Configuration begins
 
