@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""""""""""""
 
 set encoding=utf8
+let mapleader =","
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -25,6 +26,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/goyo'
 
 "All of Plugins must be added before following line
 call vundle#end()		"required
@@ -64,6 +66,9 @@ set showmatch
 set incsearch " search as characters are entered
 set hlsearch  " higlight matches
 
+"Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -80,6 +85,9 @@ endif
 "Some NERD Tree specific settings
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+"Goyo plugin makes text more readable when writing prose:
+map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
 "Allow saving of files as sudo when I forgot to start as sudp
 cmap w!! w !sudo tee > /dev/null %
