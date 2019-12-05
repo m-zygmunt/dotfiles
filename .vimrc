@@ -33,10 +33,15 @@ call plug#end()
 "Plug definition end
 """""""""""""""""""""""""""""""""""""""
 
+"Auto source .vimrc when save
+autocmd! BufWritePost .vimrc source %
+
 filetype plugin indent on	"required
 filetype plugin on "for markdown
 
 "Configuration begins
+
+set bg=light
 
 "Wrap text
 set textwidth=140
@@ -61,12 +66,15 @@ set tabstop=4 " number of visual spaces per TAB
 "Highlight matching {[()]}
 set showmatch
 
-"Searching 
+"Searching
 set incsearch " search as characters are entered
 set hlsearch  " higlight matches
 
 "Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+"Automatically deletes all trailing whitespace on save.
+autocmd BufWritePre * %s/\s\+$//e
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -90,3 +98,13 @@ map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
 "Allow saving of files as sudo when I forgot to start as sudp
 cmap w!! w !sudo tee > /dev/null %
+
+"Indentation fo python language
+au BufNewFile,BufRead *.py
+	\ set tabstop=4
+	\ set softtabstop=4
+	\ set shiftwidth=4
+	\ set textwidth=79
+	\ set expandtab
+	\ set autoindent
+	\ set fileformat=unix
