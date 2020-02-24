@@ -1,5 +1,10 @@
-"""""""""""""""""""""""""""""""""""""""
-	   "Matt's .vimrc
+"__  __ _____
+"|  \/  |__  /
+"| |\/| | / /
+"| |  | |/ /_
+"|_|  |_/____|
+"
+"Matt's .vimrc
 """""""""""""""""""""""""""""""""""""""
 
 set encoding=utf8
@@ -108,3 +113,4 @@ au BufNewFile,BufRead *.py
 	\ set expandtab
 	\ set autoindent
 	\ set fileformat=unix
+
