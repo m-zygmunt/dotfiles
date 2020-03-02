@@ -32,6 +32,7 @@ Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -46,7 +47,7 @@ filetype plugin on "for markdown
 
 "Configuration begins
 
-set bg=light
+colorscheme nord
 
 "Wrap text
 set textwidth=140
@@ -99,7 +100,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 "Goyo plugin makes text more readable when writing prose:
-map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+"map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
 "Allow saving of files as sudo when I forgot to start as sudp
 cmap w!! w !sudo tee > /dev/null %
